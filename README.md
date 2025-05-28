@@ -33,7 +33,7 @@ A modern, production-ready FastAPI + TypeScript API boilerplate with comprehensi
    ```
 3. Run the setup script to customize for your project:
    ```bash
-   pnpm init
+   pnpm run init
    ```
 4. Start development:
    ```bash
