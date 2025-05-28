@@ -33,7 +33,7 @@ A modern, production-ready FastAPI + TypeScript API boilerplate with comprehensi
    ```
 3. Run the setup script to customize for your project:
    ```bash
-   pnpm setup
+   pnpm init
    ```
 4. Start development:
    ```bash
@@ -64,7 +64,7 @@ pnpm dev
 
 ### Available Scripts
 
-- `pnpm setup` - Interactive project setup and customization
+- `pnpm init` - Interactive project setup and customization
 - `pnpm dev` - Start development server with hot reload
 - `pnpm build` - Build for production
 - `pnpm start` - Start production server
@@ -203,7 +203,7 @@ The project includes comprehensive tooling for code quality:
 
 This boilerplate provides a solid foundation for building APIs. To customize for your project:
 
-1. **Use the setup script**: Run `pnpm setup` for interactive customization
+1. **Use the setup script**: Run `pnpm init` for interactive customization
 2. **Add your routes**: Create new route files in `src/routes/` (see `example.ts` for reference)
 3. **Define your data models**: Add types and schemas in `src/types/`
 4. **Add business logic**: Create utilities and services as needed
