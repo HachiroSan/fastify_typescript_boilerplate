@@ -21,6 +21,8 @@ function question(prompt) {
 }
 
 async function updateProjectConfig(config) {
+  const currentYear = new Date().getFullYear();
+  
   // Update package.json
   const packageJsonPath = join(projectRoot, 'package.json');
   const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
@@ -72,10 +74,23 @@ async function updateProjectConfig(config) {
   
   writeFileSync(readmePath, readmeContent);
   
+  // Update LICENSE
+  const licensePath = join(projectRoot, 'LICENSE');
+  let licenseContent = readFileSync(licensePath, 'utf8');
+  
+  const copyrightHolder = config.author || config.apiTitle;
+  licenseContent = licenseContent.replace(
+    'Copyright (c) 2024 FastAPI TypeScript API Boilerplate',
+    `Copyright (c) ${currentYear} ${copyrightHolder}`
+  );
+  
+  writeFileSync(licensePath, licenseContent);
+  
   console.log('\n✅ Project configuration updated successfully!');
   console.log(`\n📦 Project: ${config.projectName}`);
   console.log(`📝 Description: ${config.description}`);
   console.log(`👤 Author: ${config.author}`);
+  console.log(`📄 License: MIT (${currentYear} ${copyrightHolder})`);
   console.log(`\n🚀 Next steps:`);
   console.log(`1. Run: pnpm install`);
   console.log(`2. Run: pnpm dev`);
